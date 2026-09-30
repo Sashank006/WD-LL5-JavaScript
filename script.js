@@ -1,59 +1,51 @@
-// ============================================================
-//  🎟  Event Welcome Center — script.js
-//  JavaScript Foundations · Lab 5
-// ============================================================
+// Event setup
+let eventName = "Tech Summit";
+let attendeeName = "Jordan";
+let speakerName = "Dr. Lee";
+let roomNumber = 204;
 
-// ── Challenge 1: Event Information ──────────────────────────
-// Create your variables here and log each one to the console.
+let attendee2 = "Sam";
+let attendee3 = "Taylor";
 
-// let eventName = "CodeFest";
-// let speakerName = "";
-// let roomNumber = 204;
-// let attendeeName = "";
+let attendeeCount = 0;
 
-// console.log(eventName);
+// Display information
+console.log(eventName);
+console.log(attendeeName);
+console.log(speakerName);
+console.log(roomNumber);
 
+// Personalized messages
+console.log("Welcome " + attendeeName + " to " + eventName);
+console.log(attendeeName + " will be in Room " + roomNumber);
+console.log("Today's speaker is " + speakerName);
 
-// ── Challenge 2: Personalized Greetings ─────────────────────
-// Combine your variables with strings to build welcome messages.
+// Talking to the user
+alert("Welcome to " + eventName + "!");
 
-// console.log("Welcome " + attendeeName + " to " + eventName + "!");
-// console.log("Your session is in Room " + roomNumber + ".");
+// LevelUp 1: greeting function
+function attendeeGreeting(name) {
+  console.log(name + " just checked in!");
+}
 
+// LevelUp 4: one function that does the whole check-in
+function checkIn(name) {
+  attendeeCount = attendeeCount + 1;
+  attendeeGreeting(name);
+  console.log("Total attendees: " + attendeeCount);
+}
 
-// ── Challenge 3: Build Functions ────────────────────────────
-// Create at least two functions and call them below.
+// LevelUp 2: multiple attendees
+checkIn(attendeeName);
+checkIn(attendee2);
+checkIn(attendee3);
 
-// function welcomeGuest() {
-//   console.log("Welcome to " + eventName);
-// }
+// LevelUp 3: console mastery
+console.table([
+  { name: attendeeName, room: roomNumber },
+  { name: attendee2, room: roomNumber },
+  { name: attendee3, room: roomNumber },
+]);
 
-// function displaySessionInfo() {
-//   console.log("Room: " + roomNumber);
-// }
-
-// welcomeGuest();
-// displaySessionInfo();
-
-
-// ── Challenge 4: Alert Messages ─────────────────────────────
-// Send messages directly to the user with alert().
-
-// alert("Welcome to " + eventName + "!");
-
-
-// ── Challenge 5: Attendee Counter ───────────────────────────
-// Track how many attendees have checked in.
-
-// let attendeeCount = 0;
-// console.log("Attendees: " + attendeeCount);
-
-// attendeeCount++;
-// console.log("Attendees: " + attendeeCount);
-
-
-// ── 🚀 Level Up Challenges ──────────────────────────────────
-// LU1: Add displaySpeaker(), displayRoom(), displayAgenda()
-// LU2: Create variables for 3 attendees with personalized messages
-// LU3: Build a mini conference dashboard (variables + functions + console)
-// LU4: Research and demo console.warn(), console.table(), or console.info()
+console.warn("Room " + roomNumber + " is nearly full");
+console.info("Speaker for today: " + speakerName);
